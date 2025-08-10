@@ -109,7 +109,7 @@
         compatible = "cirque,pinnacle";
         reg = <0x2a>;                                     // default slave address
         status = "okay";
-        dr-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>;         // P1.01 (maybe it is P1.02)
+        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;         // P1.01 (maybe it is P1.02)
 
         sensitivity = "2x";
         sleep;
