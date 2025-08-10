@@ -8,23 +8,6 @@
     col-offset = <6>;
 };
 
-&pinctrl {
-    i2c0_default: i2c0_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 0, 10)>,
-                    <NRF_PSEL(TWIM_SDA, 0, 16)>;
-        };
-    };
-
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 0, 10)>,
-                    <NRF_PSEL(TWIM_SDA, 0, 16)>;
-            low-power-enable;
-        };
-    };
-};
-
 &kscan0 {
     col-gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>,
                 <&xiao_d 9 GPIO_ACTIVE_HIGH>,
@@ -35,10 +18,6 @@
 
 &i2c0 {
     status = "okay";
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
-    pinctrl-names = "default", "sleep";
-
     glidepoint_right: glidepoint_right@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;

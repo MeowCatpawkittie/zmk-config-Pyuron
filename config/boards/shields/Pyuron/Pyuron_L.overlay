@@ -10,23 +10,6 @@
             ;
 };
 
-&pinctrl {
-    i2c0_default: i2c0_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 0, 10)>,
-                    <NRF_PSEL(TWIM_SDA, 0, 16)>;
-        };
-    };
-
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 0, 10)>,
-                    <NRF_PSEL(TWIM_SDA, 0, 16)>;
-            low-power-enable;
-        };
-    };
-};
-
 / {
     split_inputs {
         #address-cells = <1>;
@@ -43,10 +26,6 @@
 
 &i2c0 {
     status = "okay";
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
-    pinctrl-names = "default", "sleep";
-
     glidepoint_left: glidepoint_left@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
