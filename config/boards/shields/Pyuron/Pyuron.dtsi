@@ -102,8 +102,10 @@
         status = "disabled";
         device = <&glidepoint>;
     };
-};
+}; */
 
+&i2c0 {
+    status = "okay";
     glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
@@ -114,3 +116,4 @@
         sleep; 
         no-taps;
     };
+};
