@@ -40,11 +40,11 @@
     pinctrl-0 = <&i2c1_default>;
     pinctrl-1 = <&i2c1_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
+    clock-frequency = <50000>;
 
-    glidepoint_right: glidepoint_right@2a {
+    glidepoint_right: glidepoint_right@2b {
         compatible = "cirque,pinnacle";
-        reg = <0x2a>;
+        reg = <0x2b>;
         status = "okay";
         dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
         sensitivity = "2x";
