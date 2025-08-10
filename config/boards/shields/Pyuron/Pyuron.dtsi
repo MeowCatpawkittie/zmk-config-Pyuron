@@ -25,7 +25,6 @@
         status = "disabled";
         device = <&glidepoint_split>;
     };
-};
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -39,7 +38,7 @@
         >;
     };
 
-        default_layout: default_layout {
+    default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
 
@@ -89,7 +88,6 @@
             , <&key_physical_attrs 100 100 1200  300       0     0     0>
             ;
     };
-
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
