@@ -112,6 +112,5 @@
         status = "okay";
         dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
         sensitivity = "4x";
-        taps;
     };
 };
