@@ -11,5 +11,5 @@
 };
 
 &glidepoint_listener {
-    status = "okay";    // enable
+    status = "disabled";
 };
