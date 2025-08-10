@@ -84,9 +84,65 @@
             , <&key_physical_attrs 100 100 1200  300       0     0     0>
             ;
     };
+};
     
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
+                <NRF_PSEL(TWIM_SCL, 0, 16)>;
+			 bias-pull-up;
+        };
     };
-}; 
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
+                <NRF_PSEL(TWIM_SCL, 0, 16)>;
+            low-power-enable;
+        };
+    };
+};
+
+cirque_pinnacle_i2c: &i2c0 {
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <I2C_BITRATE_FAST>;
+};
+
+// Enable custom i2c for the Right side
+
+&cirque_pinnacle_i2c {
+    status = "okay";
+
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
+        sensitivity = "2x";
+        sleep; 
+        no-taps;
+    };
+};
+
+// Cirque Trackpad
+
+&glidepoint {
+	status = "okay";
+};
+
+//&glidepoint_split {
+//	device = <&glidepoint>;
+//};
+
+ / {
+ 	glidepoint_listener: glidepoint_listener {
+ 		compatible = "zmk,input-listener";
+ 		status = "okay";
+ 		device = <&glidepoint>;
+         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>;
+ 	};
+ };
