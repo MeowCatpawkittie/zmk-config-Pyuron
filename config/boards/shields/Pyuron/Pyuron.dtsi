@@ -10,23 +10,6 @@
         zmk,physical-layout = &default_layout;
     };
 
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_split: glidepoint_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-            device = <&glidepoint0>;
-        };
-    };
-
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&glidepoint_split>;
-    };
-
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <11>;
@@ -103,27 +86,20 @@
     };
 };
 
-&i2c0 {
-    status = "disabled";
-    glidepoint0: glidepoint@2a {                          // glidepoint0 = central, glidepoint1 = peripheral
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;                                     // default slave address
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        glidepoint_split: glidepoint_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    glidepoint_listener: glidepoint_listener {
+        compatible = "zmk,input-listener";
         status = "disabled";
-        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;         // P1.01 (maybe it is P1.02)
-
-        sensitivity = "2x";
-        sleep;
-        //no-taps;
-
-        // see: https://github.com/petejohanson/cirque-input-module/blob/main/dts/bindings/input/cirque%2Cpinnacle-common.yaml
-        //rotate-90 = false;
-        //x-invert = false;
-        //y-invert = false;
-        //sleep = false;
-        //no-secondary-tap = false;
-        //no-taps = false;
-        //sensitivity = 1x | 2x | 3x | 4x
-        //x-axis-z-min = 5;
-        //y-axis-z-min= 4;
+        device = <&glidepoint_split>;
     };
 };
