@@ -128,21 +128,19 @@ cirque_pinnacle_i2c: &i2c0 {
     };
 };
 
-// Cirque Trackpad
+// Cirque Trackpad, if the Left side is central, comment otherwise
 
-&glidepoint {
-	status = "okay";
+&glidepoint_split {
+	device = <&glidepoint>;
 };
 
-//&glidepoint_split {
-//	device = <&glidepoint>;
-//};
+// Cirque Trackpad, if the Right side is central, comment otherwise
 
- / {
- 	glidepoint_listener: glidepoint_listener {
- 		compatible = "zmk,input-listener";
- 		status = "okay";
- 		device = <&glidepoint>;
-         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>;
- 	};
- };
+// / {
+// 	glidepoint_listener: glidepoint_listener {
+// 		compatible = "zmk,input-listener";
+// 		status = "okay";
+// 		device = <&glidepoint>;
+//         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>;
+// 	};
+// };
