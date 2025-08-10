@@ -104,6 +104,7 @@
 };
 
 &i2c0 {
+    status = "okay";
     glidepoint0: glidepoint@2a {                          // glidepoint0 = central, glidepoint1 = peripheral
         compatible = "cirque,pinnacle";
         reg = <0x2a>;                                     // default slave address
