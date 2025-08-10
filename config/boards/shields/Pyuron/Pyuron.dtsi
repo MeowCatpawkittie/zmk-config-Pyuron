@@ -84,8 +84,27 @@
             , <&key_physical_attrs 100 100 1200  300       0     0     0>
             ;
     };
+    
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
 
-　　 &i2c0 {
+        glidepoint_split: glidepoint_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            input = <&glidepoint_listener>;
+        };
+    };
+
+
+    glidepoint_listener: glidepoint_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&glidepoint>;
+    };
+};
+
+&i2c0 {
     status = "okay";
     glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
@@ -94,23 +113,5 @@
         dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
         sensitivity = "4x";
         tap-enabled;
-    };
-};   
-
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_split: glidepoint_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-            device = <&glidepoint_listener>;
-        };
-    };
-
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&glidepoint>;
     };
 };
