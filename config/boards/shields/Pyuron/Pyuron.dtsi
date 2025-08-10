@@ -22,6 +22,18 @@
         >;
     };
 
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        diode-direction = "col2row";
+            row-gpios
+                = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+                , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+                , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+                , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
+                ;
+    };
+
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
@@ -72,7 +84,19 @@
             , <&key_physical_attrs 100 100 1200  300       0     0     0>
             ;
     };
-    
+
+　　 &i2c0 {
+    status = "okay";
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
+        sensitivity = "4x";
+        tap-enabled;
+    };
+};   
+
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -84,34 +108,9 @@
         };
     };
 
-    kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
-        diode-direction = "col2row";
-            row-gpios
-                = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-                , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-                , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-                , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
-                ;
-    };
-    
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&glidepoint>;
-    };
-};
-
-&i2c0 {
-    status = "okay";
-    glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
         status = "okay";
-        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "2x";
-        sleep; 
-        no-taps;
+        device = <&glidepoint>;
     };
 };
