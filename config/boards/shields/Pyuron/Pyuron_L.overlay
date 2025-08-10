@@ -9,3 +9,8 @@
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
 };
+
+&glidepoint_listener  {
+    status = "okay";
+    device = <&glidepoint_split>;
+};
