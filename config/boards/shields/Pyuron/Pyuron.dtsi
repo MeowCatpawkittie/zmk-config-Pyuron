@@ -72,6 +72,16 @@
             , <&key_physical_attrs 100 100 1200  300       0     0     0>
             ;
     };
+    
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        glidepoint_split: glidepoint_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
@@ -86,21 +96,6 @@
     };
 };
 
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_split: glidepoint_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-        };
-    };
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&glidepoint>;
-    };
-
 &i2c0 {
     status = "okay";
     glidepoint: glidepoint@2a {
@@ -112,4 +107,10 @@
         sleep; 
         no-taps;
     };
+};
+
+glidepoint_listener: glidepoint_listener {
+    compatible = "zmk,input-listener";
+    status = "disabled";
+    device = <&glidepoint>;
 };
