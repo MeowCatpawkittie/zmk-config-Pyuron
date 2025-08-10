@@ -15,3 +15,16 @@
                 <&xiao_d 7 GPIO_ACTIVE_HIGH>,
                 <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
+
+&glidepoint  {
+    status = "okay";
+};
+
+&glidepoint_listener {// If you want the left side to be central, comment it out.
+    status = "okay";
+};
+
+/* If you want the left side to be central, uncomment it.
+&glidepoint_split {
+    device = <&glidepoint>;
+};
