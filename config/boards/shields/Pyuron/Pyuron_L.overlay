@@ -10,24 +10,6 @@
             ;
 };
 
-&gpio0 {
-    status = "okay";
-};
-
-&cirque_pinnacle_i2c {
-    status = "okay";
-
-    glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        status = "okay";
-        reg = <0x2a>;
-        dr-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;     // D1 pin (nice!view compatible)
-
-        sleep;
-    };
-};
-
-// Overrides for the input-split child node
-&glidepoint_split {
-    device = <&glidepoint>;
+&glidepoint_listener {
+    status = "okay";    // enable
 };
