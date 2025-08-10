@@ -30,7 +30,7 @@
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
         status = "okay";
-        dr-gpios = <&gpio1 0 (GPIO_ACTIVE_HIGH)>;
+        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
         sensitivity = "2x";
     };
 };
