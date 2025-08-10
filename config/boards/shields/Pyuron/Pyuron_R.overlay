@@ -16,6 +16,28 @@
                 <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
-&glidepoint_listener {
-    status = "okay";    // enable
+&i2c0 {
+    status = "okay";                // enable via status=okay
+    glidepoint0: glidepoint@2a {
+        status = "okay";            // enable via status=okay
+    };
+};
+
+&i2c0_default {
+    group1 {
+      bias-pull-up;
+    };
+};
+
+
+/* See: https://zmk.dev/docs/development/hardware-integration/pointing?part-type=peripheral#peripheral-configuration-1 */
+// Overrides for the input-split child node
+&glidepoint_split {
+    device = <&glidepoint0>;
+
+    // Optional
+    // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+
+    // device on right is tilted a few degrees
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
 };
