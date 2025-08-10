@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/caksoylar  
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -17,7 +19,7 @@ manifest:
       remote: badjeff
       revision: main
     - name: cirque-input-module
-      remote: MeowCatpawkittie
+      remote: petejohanson
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
