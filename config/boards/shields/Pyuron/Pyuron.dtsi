@@ -104,11 +104,10 @@
 };
 
 &i2c0 {
-    status = "disabled";
     glidepoint0: glidepoint@2a {                          // glidepoint0 = central, glidepoint1 = peripheral
         compatible = "cirque,pinnacle";
         reg = <0x2a>;                                     // default slave address
-        status = "disabled";
+        status = "okay";
         dr-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>;         // P1.01 (maybe it is P1.02)
 
         sensitivity = "2x";
