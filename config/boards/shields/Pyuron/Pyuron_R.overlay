@@ -16,3 +16,11 @@
                 <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
+&glidepoint {
+    status = "okay";
+};
+
+&glidepoint_listener {
+    status = "okay";
+};
+
