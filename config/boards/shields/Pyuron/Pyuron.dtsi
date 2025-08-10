@@ -10,31 +10,6 @@
         zmk,physical-layout = &default_layout;
     };
 
-&i2c0 {
-    status = "disabled";
-    glidepoint0: glidepoint@2a {                          // glidepoint0 = central, glidepoint1 = peripheral
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;                                     // default slave address
-        status = "disabled";
-        dr-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>;         // P1.01 (maybe it is P1.02)
-
-        sensitivity = "2x";
-        sleep;
-        //no-taps;
-
-        // see: https://github.com/petejohanson/cirque-input-module/blob/main/dts/bindings/input/cirque%2Cpinnacle-common.yaml
-        //rotate-90 = false;
-        //x-invert = false;
-        //y-invert = false;
-        //sleep = false;
-        //no-secondary-tap = false;
-        //no-taps = false;
-        //sensitivity = 1x | 2x | 3x | 4x
-        //x-axis-z-min = 5;
-        //y-axis-z-min= 4;
-    };
-};
-
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -50,7 +25,6 @@
         status = "disabled";
         device = <&glidepoint_split>;
     };
-};
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -125,5 +99,30 @@
                 , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
                 , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
                 ;
+    };
+};
+
+&i2c0 {
+    status = "disabled";
+    glidepoint0: glidepoint@2a {                          // glidepoint0 = central, glidepoint1 = peripheral
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;                                     // default slave address
+        status = "disabled";
+        dr-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>;         // P1.01 (maybe it is P1.02)
+
+        sensitivity = "2x";
+        sleep;
+        //no-taps;
+
+        // see: https://github.com/petejohanson/cirque-input-module/blob/main/dts/bindings/input/cirque%2Cpinnacle-common.yaml
+        //rotate-90 = false;
+        //x-invert = false;
+        //y-invert = false;
+        //sleep = false;
+        //no-secondary-tap = false;
+        //no-taps = false;
+        //sensitivity = 1x | 2x | 3x | 4x
+        //x-axis-z-min = 5;
+        //y-axis-z-min= 4;
     };
 };
