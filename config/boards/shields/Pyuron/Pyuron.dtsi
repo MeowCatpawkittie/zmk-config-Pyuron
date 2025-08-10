@@ -89,4 +89,4 @@
         compatible = "zmk,input-listener";
         status = "disabled";
     };
-};
+}; 
