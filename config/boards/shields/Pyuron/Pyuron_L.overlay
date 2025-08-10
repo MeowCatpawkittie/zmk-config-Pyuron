@@ -10,55 +10,24 @@
             ;
 };
 
-&pinctrl {
-    i2c1_default: i2c1_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 0, 10)>,
-                    <NRF_PSEL(TWIM_SDA, 0, 16)>;
-            bias-pull-up;
-        };
-    };
-
-    i2c1_sleep: i2c1_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 0, 10)>,
-                    <NRF_PSEL(TWIM_SDA, 0, 16)>;
-            bias-pull-up;
-            low-power-enable;
-        };
-    };
-};
-
-/ {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_split: glidepoint_split@1 {
-            compatible = "zmk,input-split";
-            status = "okay";
-            reg = <1>;
-            device = <&glidepoint_left>;
-        };
-    };
-};
-
-&i2c1 {
+&gpio0 {
     status = "okay";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-1 = <&i2c1_sleep>;
-    pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
+};
 
-    glidepoint_left: glidepoint_left@2a {
+&cirque_pinnacle_i2c {
+    status = "okay";
+
+    glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
-        reg = <0x2a>;
         status = "okay";
-        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "2x";
+        reg = <0x2a>;
+        dr-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;     // D1 pin (nice!view compatible)
+
+        sleep;
     };
 };
 
-&glidepoint_listener {
-    status = "okay";
+// Overrides for the input-split child node
+&glidepoint_split {
+    device = <&glidepoint>;
 };

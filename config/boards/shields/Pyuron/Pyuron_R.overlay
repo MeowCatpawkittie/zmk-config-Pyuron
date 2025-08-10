@@ -8,25 +8,6 @@
     col-offset = <6>;
 };
 
-&pinctrl {
-    i2c1_default: i2c1_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 0, 10)>,
-                    <NRF_PSEL(TWIM_SDA, 0, 16)>;
-            bias-pull-up;
-        };
-    };
-
-    i2c1_sleep: i2c1_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 0, 10)>,
-                    <NRF_PSEL(TWIM_SDA, 0, 16)>;
-            bias-pull-up;
-            low-power-enable;
-        };
-    };
-};
-
 &kscan0 {
     col-gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>,
                 <&xiao_d 9 GPIO_ACTIVE_HIGH>,
@@ -35,36 +16,6 @@
                 <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
-&i2c1 {
-    status = "okay";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-1 = <&i2c1_sleep>;
-    pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
-
-    glidepoint_right: glidepoint_right@2b {
-        compatible = "cirque,pinnacle";
-        reg = <0x2b>;
-        status = "okay";
-        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "2x";
-    };
-};
-
-/ {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_split: glidepoint_split@1 {
-            compatible = "zmk,input-split";
-            status = "okay";
-            reg = <1>;
-            device = <&glidepoint_right>;
-        };
-    };
-};
-
 &glidepoint_listener {
-    status = "okay";
+    status = "okay";    // enable
 };
