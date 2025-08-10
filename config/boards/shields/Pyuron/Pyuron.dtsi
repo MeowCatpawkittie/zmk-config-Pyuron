@@ -87,7 +87,6 @@
 };
 
 // {
-    /* If you want the left side to be central, uncomment it.
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -102,7 +101,7 @@
         status = "disabled";
         device = <&glidepoint>;
     };
-}; */
+};
 
 &i2c0 {
     status = "okay";
@@ -115,10 +114,4 @@
         sleep; 
         no-taps;
     };
-};
-
-glidepoint_listener: glidepoint_listener {
-    compatible = "zmk,input-listener";
-    status = "disabled";
-    device = <&glidepoint>;
 };
