@@ -86,7 +86,6 @@
     };
 };
 
-// {
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -101,7 +100,6 @@
         status = "disabled";
         device = <&glidepoint>;
     };
-};
 
 &i2c0 {
     status = "okay";
