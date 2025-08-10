@@ -20,7 +20,7 @@
     status = "okay";
 };
 
-&glidepoint_listener {// If you want the left side to be central, comment it out.
+&glidepoint_listener { // If you want the left side to be central, comment it out.
     status = "okay";
 };
 
@@ -28,3 +28,4 @@
 &glidepoint_split {
     device = <&glidepoint>;
 };
+*/
