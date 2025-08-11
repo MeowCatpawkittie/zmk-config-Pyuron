@@ -9,27 +9,3 @@
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
 };
-
-&i2c0 {
-    status = "okay";
-
-    glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        status = "okay";
-        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "2x";
-    };
-};
-
-/ {
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&glidepoint>;
-        input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
-        >;
-    };
-};
