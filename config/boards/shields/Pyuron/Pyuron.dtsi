@@ -84,13 +84,14 @@
             , <&key_physical_attrs 100 100 1200  300       0     0     0>
             ;
     };
+};
 
 &pinctrl {
    i2c0_default: i2c0_default {
     group1 {
       psels = <NRF_PSEL(TWIM_SDA, 1, 0)>,
           <NRF_PSEL(TWIM_SCL, 0, 16)>;
-          bias-pull-up
+        bias-pull-up;
     };
   };
 
@@ -113,7 +114,5 @@
         dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "2x";
-        sleep;
     };
-  }; 
 };
