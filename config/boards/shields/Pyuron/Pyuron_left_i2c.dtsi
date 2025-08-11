@@ -1,8 +1,7 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include "Pyuron.dtsi"
+#include "dilemma.dtsi"
 
 &i2c0 {
     status = "okay";
 };
-
