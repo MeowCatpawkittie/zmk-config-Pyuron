@@ -101,4 +101,3 @@
         status = "disabled";
         device = <&glidepoint_split>;
     };
-};
