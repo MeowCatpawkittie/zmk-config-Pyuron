@@ -84,25 +84,4 @@
             , <&key_physical_attrs 100 100 1200  300       0     0     0>
             ;
     };
-
-        glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&glidepoint>;
-    };
 };
-
-&i2c0 {
-    status = "okay";
-
-    glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        status = "disabled";
-        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "2x";
-        sleep; 
-        no-taps;
-    };
-  };
