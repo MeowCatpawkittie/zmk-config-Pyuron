@@ -2,6 +2,10 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "Pyuron.dtsi"
 
+&i2c0 {
+    status = "okay";
+};
+
 / {
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
