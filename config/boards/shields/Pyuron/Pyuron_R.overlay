@@ -15,7 +15,3 @@
                 <&xiao_d 7 GPIO_ACTIVE_HIGH>,
                 <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
-
-&glidepoint_listener {
-    status = "okay";    // enable
-};
