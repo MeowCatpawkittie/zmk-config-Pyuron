@@ -91,14 +91,18 @@
         device = <&glidepoint>;
     };
 
+&i2c0 {
+    status = "okay";
+
     glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
         status = "disabled";
-        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
+        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "4x";
         sleep; 
         no-taps;
     };
+  };
 };
