@@ -84,7 +84,6 @@
             , <&key_physical_attrs 100 100 1200  300       0     0     0>
             ;
     };
-};
 
     split_inputs {
         #address-cells = <1>;
@@ -101,3 +100,4 @@
         status = "disabled";
         device = <&glidepoint_split>;
     };
+};
