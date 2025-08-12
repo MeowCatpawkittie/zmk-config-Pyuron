@@ -1,20 +1,13 @@
-#include "Pyuron.dtsi"
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
 
-&kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
-};
+#include "pyuron.dtsi"
 
-&glidepoint_split_R {
-    status = "disabled";
-    device = <&glidepoint>;
-};
-&glidepoint_split_L {
+/* If you want the left side to be central, uncomment it.
+&glidepoint_listener  {
     status = "okay";
-    device = <&glidepoint>;
-};
+    device = <&glidepoint_split>;
+};*/
