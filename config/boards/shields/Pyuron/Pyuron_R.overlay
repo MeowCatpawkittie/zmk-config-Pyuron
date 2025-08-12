@@ -12,6 +12,19 @@
                 <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
-&glidepoint_listener {
-    status = "okay";
+/ {
+    glidepoint_listener {
+        compatible = "zmk,input-listener";
+        input-processors = // 3 2 = 1.5, 5 4 = 1.25, 6 5 = 1.2
+                           <&zip_xy_scaler 5 4>,
+                           <&zip_temp_layer 4 2000>;
+
+        scroller {
+            layers = <1>;
+            input-processors =  <&zip_xy_scaler 1 16>,                          // will the result be 5/4 * 1/16 = 5/16?
+                                <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, // natural scrolling
+                                <&zip_xy_to_scroll_mapper>;
+            process-next;
+        };
+    };
 };

@@ -10,36 +10,31 @@
             ;
 };
 
-&pinctrl {
-    i2c0_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 16)>,
-                <NRF_PSEL(TWIM_SCL, 1, 0)>;
-            bias-pull-up;
-        };
-    };
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 16)>,
-                <NRF_PSEL(TWIM_SCL, 1, 0)>;
-            low-power-enable;
-        };
-    };
+&gpio1 {
+    status = "okay";
 };
 
 &i2c0 {
-    status = "okay";
     glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
         status = "okay";
-        reg = <0x2a>;
+
+        // P1.01 on my board
         dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
+        //dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
 
+        // rotate-90;
         sensitivity = "2x";
-        sleep;
-    };
-};
+        x-invert;
 
-&glidepoint_split {
-    device = <&glidepoint>;
+        scroll;
+
+        // trackpad is only working when powered by USB.
+        // could it be the sleep configuration?
+        /delete-property/ sleep;
+
+        // https://github.com/qmk/qmk_firmware/blob/36c3f4deba7e4c670736cc95db144b25156e90f1/drivers/sensors/cirque_pinnacle.c#L177
+        x-axis-z-min = <4>;
+        y-axis-z-min = <3>;
+    };
 };
