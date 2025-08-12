@@ -122,7 +122,6 @@ split_inputs_R {
         compatible = "cirque,pinnacle";
         status = "okay";
         reg = <0x2a>;
-        spi-max-frequency = <1000000>;
         dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "2x";
