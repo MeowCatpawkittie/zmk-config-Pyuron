@@ -84,8 +84,7 @@
             , <&key_physical_attrs 100 100 1200  300       0     0     0>
             ;
     };
-};
-
+    
 split_inputs_R {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -115,10 +114,10 @@ split_inputs_R {
         status = "disabled";
         device = <&glidepoint_split_L>;
     };
+};
 
 &i2c0 {
 	status = "disabled";
-};  
     glidepoint: glidepoint@1 {
         compatible = "cirque,pinnacle";
         status = "okay";
@@ -129,3 +128,6 @@ split_inputs_R {
         sensitivity = "2x";
         no-taps;
     };
+};
+
+    
