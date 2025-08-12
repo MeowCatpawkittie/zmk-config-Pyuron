@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "pyuron.dtsi"
+#include "Pyuron.dtsi"
 
 /* If you want the left side to be central, uncomment it.
 &glidepoint_listener  {
