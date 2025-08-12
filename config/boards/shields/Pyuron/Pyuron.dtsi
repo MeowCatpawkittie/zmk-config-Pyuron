@@ -1,15 +1,14 @@
-
-
-
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/input_transform.h>
+#include <dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/bt.h>
 #include <input/processors.dtsi>
+#include <physical_layouts.dtsi>
 
 / {
     chosen {
-zmk,matrix_transform = &default_transform;
-        //zmk,physical-layout = &tracknob46_physical_layout;
-        
+        zmk,matrix_transform = &default_transform;
+        zmk,physical-layout = &default_layout;
     };
 
     default_transform: keymap_transform_0 {
