@@ -1,4 +1,5 @@
 #include "Pyuron.dtsi"
+#include "Pyuron_left.dtsi"
 
 &kscan0 {
         col-gpios
@@ -8,33 +9,4 @@
             , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
-};
-
-&gpio1 {
-    status = "okay";
-};
-
-&i2c0 {
-    glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        status = "okay";
-
-        // P1.01 on my board
-        dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
-        //dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-
-        // rotate-90;
-        sensitivity = "2x";
-        x-invert;
-
-        scroll;
-
-        // trackpad is only working when powered by USB.
-        // could it be the sleep configuration?
-        /delete-property/ sleep;
-
-        // https://github.com/qmk/qmk_firmware/blob/36c3f4deba7e4c670736cc95db144b25156e90f1/drivers/sensors/cirque_pinnacle.c#L177
-        x-axis-z-min = <4>;
-        y-axis-z-min = <3>;
-    };
 };
