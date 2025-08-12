@@ -117,16 +117,19 @@ split_inputs_R {
 };
 
 &i2c0 {
-	status = "disabled";
+    status = "okay";
+
     glidepoint: glidepoint@1 {
         compatible = "cirque,pinnacle";
-        status = "okay";
         reg = <0x2a>;
+        status = "okay";
         dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "2x";
+        sleep;
         no-taps;
     };
+
 };
 
     
