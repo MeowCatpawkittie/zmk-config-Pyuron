@@ -51,9 +51,7 @@ cirque_pinnacle_i2c: &i2c0 {
         // so connecting this S pin to the DR pin in the Cirque, 
         // will make the MCU be notified when there is data ready in the cirque
         dr-gpios = <&gpio1 10 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "2x";
-        sleep; 
-        no-taps;
+        sensitivity = "4x";
     };
 };
 
