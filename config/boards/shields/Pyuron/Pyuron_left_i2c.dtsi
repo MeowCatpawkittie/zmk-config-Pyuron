@@ -1,7 +1,0 @@
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
-#include "Pyuron.dtsi"
-
-&i2c0 {
-    status = "okay";
-};

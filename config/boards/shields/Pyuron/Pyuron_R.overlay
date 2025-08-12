@@ -1,5 +1,4 @@
 #include "Pyuron.dtsi"
-#include "Pyuron_right_i2c.dtsi"
 
 &default_transform {
     col-offset = <6>;
@@ -11,4 +10,12 @@
                 <&xiao_d 8 GPIO_ACTIVE_HIGH>,
                 <&xiao_d 7 GPIO_ACTIVE_HIGH>,
                 <&gpio0 10 GPIO_ACTIVE_HIGH>;
+};
+
+&glidepoint_listener_R {
+    status = "okay";
+    device = <&glidepoint>;
+};
+&glidepoint_listener_L {
+    status = "okay";
 };

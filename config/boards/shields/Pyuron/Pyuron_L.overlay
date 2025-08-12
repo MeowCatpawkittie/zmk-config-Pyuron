@@ -1,5 +1,4 @@
 #include "Pyuron.dtsi"
-#include "Pyuron_left_i2c.dtsi"
 
 &kscan0 {
         col-gpios
@@ -9,4 +8,13 @@
             , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
+};
+
+&glidepoint_split_R {
+    status = "disabled";
+    device = <&glidepoint>;
+};
+&glidepoint_split_L {
+    status = "okay";
+    device = <&glidepoint>;
 };
