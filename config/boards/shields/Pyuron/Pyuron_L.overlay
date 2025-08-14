@@ -1,5 +1,4 @@
 #include "Pyuron.dtsi"
-#include "Pyuron_left.dtsi"
 
 &kscan0 {
         col-gpios
@@ -10,3 +9,9 @@
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
 };
+
+/*
+&glidepoint_listener  {
+    status = "okay";
+    device = <&glidepoint_split>;
+};*/

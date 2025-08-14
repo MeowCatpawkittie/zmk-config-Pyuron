@@ -1,5 +1,4 @@
 #include "Pyuron.dtsi"
-#include "Pyuron_right.dtsi"
 
 &default_transform {
     col-offset = <6>;
@@ -12,3 +11,17 @@
                 <&xiao_d 7 GPIO_ACTIVE_HIGH>,
                 <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
+
+&glidepoint  {
+    status = "okay";
+};
+
+&glidepoint_listener {
+    status = "okay";
+};
+
+/*
+&glidepoint_split {
+    device = <&glidepoint>;
+};
+*/
