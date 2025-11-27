@@ -25,22 +25,25 @@ split_inputs {
       compatible = "zmk,input-listener";
       status = "disabled";
       device = <&trackball_split_L>;
-
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
-                           <&zip_xy_scaler 1 16>,
-                           <&zip_scroll_scaler 1 5>,
-                           <&zip_xy_to_scroll_mapper>;
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_xy_scaler 1 16>,
+            <&zip_scroll_scaler 1 5>,
+            <&zip_xy_to_scroll_mapper>;
     };
 
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
-      status = "disabled";    
+      status = "disabled";
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
     };
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         diode-direction = "col2row";
+        wakeup-source;
             row-gpios
                 = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
                 , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
