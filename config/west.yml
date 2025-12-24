@@ -6,10 +6,12 @@ manifest:
       url-base: https://github.com/MeowCatpawkittie
     - name: caksoylar
       url-base: https://github.com/caksoylar  
+    - name: badjeff
+      url-base: https://github.com/badjeff
 
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: badjeff
       revision: main
       import: app/west.yml
     - name: zmk-rgbled-widget
