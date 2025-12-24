@@ -53,7 +53,7 @@
 		compatible = "pixart,pat912x";
 		reg = <0x79>;
 		status = "okay";
-		motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		motion-gpios = <&gpio 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		res-x-cpi = <190>;
 		res-y-cpi = <190>;
 		zephyr,axis-x = <INPUT_REL_X>;
