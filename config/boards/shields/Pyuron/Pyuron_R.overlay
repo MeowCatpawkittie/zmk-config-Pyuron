@@ -58,8 +58,8 @@
 		res-y-cpi = <190>;
 		zephyr,axis-x = <INPUT_REL_X>;
 		zephyr,axis-y = <INPUT_REL_Y>;
-		// invert-x;
-		// invert-y;
+		invert-x;
+		invert-y;
 		sleep1-enable;
 		sleep2-enable;
 	};
