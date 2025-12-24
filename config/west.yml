@@ -8,6 +8,7 @@ manifest:
       url-base: https://github.com/caksoylar  
     - name: badjeff
       url-base: https://github.com/badjeff
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -22,5 +23,6 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+
   self:
     path: config
