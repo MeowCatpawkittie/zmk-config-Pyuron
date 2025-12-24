@@ -35,18 +35,18 @@
     device = <&trackball_L>;
 };
 
-&i2c0 {
+&i2c1 {
 	status = "okay";
 	compatible = "nordic,nrf-twim";
-	pinctrl-0 = <&i2c0_default>;
-	pinctrl-1 = <&i2c0_sleep>;
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
 	pinctrl-names = "default", "sleep";
 
 	trackball_L: trackball_L@0 {
 		compatible = "pixart,pat912x";
 		reg = <0x79>;
 		status = "okay";
-		motion-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		res-x-cpi = <190>;
 		res-y-cpi = <190>;
 		zephyr,axis-x = <INPUT_REL_X>;
