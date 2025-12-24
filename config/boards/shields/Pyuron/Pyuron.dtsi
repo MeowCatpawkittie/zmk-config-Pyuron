@@ -4,6 +4,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <input/processors.dtsi>
 #include <physical_layouts.dtsi>
+#include <input/processors/report_rate_limit.dtsi>
+#include <input/processors/xyz.dtsi>
 
 &uicr {
     nfct-pins-as-gpios;
