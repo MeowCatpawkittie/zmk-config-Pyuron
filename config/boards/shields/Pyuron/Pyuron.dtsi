@@ -14,6 +14,7 @@
         zmk,physical-layout = &default_layout;
     };
 
+//trackball settings  
 split_inputs {
       #address-cells = <1>;
       #size-cells = <0>;
@@ -29,6 +30,7 @@ split_inputs {
       status = "disabled";
       device = <&trackball_split_L>;
         input-processors =
+            <&zip_report_rate_limit 8>, <&zip_xyz>,
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 1 16>,
             <&zip_scroll_scaler 1 5>,
@@ -39,6 +41,7 @@ split_inputs {
       compatible = "zmk,input-listener";
       status = "disabled";
         input-processors =
+            <&zip_report_rate_limit 8>, <&zip_xyz>,
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
     };
 

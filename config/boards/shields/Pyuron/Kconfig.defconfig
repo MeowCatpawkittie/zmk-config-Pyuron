@@ -6,11 +6,6 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT
     default y
     
-config ZMK_POINTING
-    default y
-
-config PAW3222
-    default y
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
@@ -22,12 +17,6 @@ config ZMK_KEYBOARD_NAME
     default "Pyuron_L"
 
 config ZMK_SPLIT
-    default y
-    
-config ZMK_POINTING
-    default y
-
-config PAW3222
     default y
 
 endif

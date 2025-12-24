@@ -6,15 +6,18 @@ manifest:
       url-base: https://github.com/MeowCatpawkittie
     - name: caksoylar
       url-base: https://github.com/caksoylar  
-    - name: sekigon-gonnoc
-      url-base: https://github.com/sekigon-gonnoc
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-driver-paw3222
-      remote: sekigon-gonnoc
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
+    - name: zmk-input-processor-xyz
+      remote: badjeff
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
