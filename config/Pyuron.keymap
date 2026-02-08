@@ -50,10 +50,10 @@
 
         MAC_OPS {
             bindings = <
-&trans  &kp LG(LS(TAB))  &kp LC(UP_ARROW)    &kp LG(TAB)      &kp F11               &kp LC(LG(F))  &trans      &trans  &trans  &trans
-&trans  &kp LC(LEFT)     &kp LS(LG(T))       &kp LC(RIGHT)    &kp LG(LS(NUMBER_3))  &trans         &trans      &trans  &trans  &trans
-&trans  &kp KP_NUMBER_1  &kp LC(DOWN_ARROW)  &kp KP_NUMBER_3  &kp LG(LS(NUMBER_4))  &trans         &trans      &trans  &trans  &trans
-&trans  &trans           &trans              &trans           &trans                &trans         &kp DELETE  &trans  &trans  &kp LG(Q)
+&trans  &kp LG(LS(TAB))         &kp LC(UP_ARROW)    &kp LG(TAB)              &kp F11               &kp LC(LG(F))  &trans      &trans  &trans  &trans
+&trans  &kp LC(LEFT)            &kp LS(LG(T))       &kp LC(RIGHT)            &kp LG(LS(NUMBER_3))  &trans         &trans      &trans  &trans  &trans
+&trans  &kp LG(LS(LEFT_ARROW))  &kp LC(DOWN_ARROW)  &kp LG(LS(RIGHT_ARROW))  &kp LG(LS(NUMBER_4))  &trans         &trans      &trans  &trans  &trans
+&trans  &trans                  &trans              &trans                   &trans                &trans         &kp DELETE  &trans  &trans  &kp LG(Q)
             >;
         };
 
@@ -68,23 +68,23 @@
 
         WIN_OPS {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans   &trans  &trans      &trans  &trans  &trans
+&kp ESCAPE      &kp LS(LA(TAB))         &kp UP_ARROW    &kp LA(TAB)              &trans   &trans  &trans      &trans  &trans  &trans
 &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans  &trans      &trans  &trans  &trans
 &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans  &trans      &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans  &kp DELETE  &trans  &trans  &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans  &kp DELETE  &trans  &trans  &kp LA(F4)
             >;
         };
 
         NUM_SYS {
             bindings = <
-&trans  &trans          &kp UP_ARROW    &trans           &trans  &kp FSLH  &kp N1  &kp N2  &kp N3   &kp MINUS
-&trans  &kp LEFT_ARROW  &trans          &kp RIGHT_ARROW  &trans  &trans    &kp N4  &kp N5  &kp N6   &kp EQUAL
-&trans  &trans          &kp DOWN_ARROW  &trans           &trans  &trans    &trans  &kp N0  &kp N7   &kp N8
-&kp N9  &kp RSHFT       &trans          &trans           &trans  &trans    &trans  &trans  &kp DOT  &trans
+&trans  &trans          &kp UP_ARROW    &trans           &trans  &kp FSLH      &kp N1  &kp N2  &kp N3   &kp MINUS
+&trans  &kp LEFT_ARROW  &trans          &kp RIGHT_ARROW  &trans  &kp ASTERISK  &kp N4  &kp N5  &kp N6   &kp PLUS
+&trans  &trans          &kp DOWN_ARROW  &trans           &trans  &trans        &trans  &kp N0  &kp N7   &kp N8
+&kp N9  &kp EQUAL       &trans          &trans           &trans  &trans        &trans  &trans  &kp DOT  &kp RIGHT_SHIFT
             >;
         };
 
-        layer_4 {
+        SYSTEM {
             bindings = <
 &trans  &trans      &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans      &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
