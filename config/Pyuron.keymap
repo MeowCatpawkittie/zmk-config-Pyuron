@@ -50,10 +50,10 @@
 
         MAC_OPS {
             bindings = <
-&trans  &kp LG(LS(TAB))     &kp LC(UP_ARROW)    &kp LG(TAB)          &kp F11               &kp LC(LG(F))  &trans      &trans  &trans  &kp LG(LC(Q))
-&trans  &kp LC(LEFT)        &kp LS(LG(T))       &kp LC(RIGHT)        &kp LG(LS(NUMBER_3))  &trans         &trans      &trans  &trans  &trans
-&trans  &kp LG(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &kp LG(LS(NUMBER_4))  &trans         &trans      &trans  &trans  &trans
-&trans  &trans              &trans              &trans               &trans                &trans         &kp DELETE  &trans  &trans  &kp LG(Q)
+&trans  &kp LG(LS(TAB))     &kp LC(UP_ARROW)    &kp LG(TAB)          &kp F11               &kp LC(LG(F))  &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &trans  &kp LG(LC(Q))
+&trans  &kp LC(LEFT)        &kp LS(LG(T))       &kp LC(RIGHT)        &kp LG(LS(NUMBER_3))  &trans         &trans            &trans             &trans  &trans
+&trans  &kp LG(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &kp LG(LS(NUMBER_4))  &trans         &trans            &trans             &trans  &trans
+&trans  &trans              &trans              &trans               &trans                &trans         &kp DELETE        &trans             &trans  &kp LG(Q)
             >;
         };
 
