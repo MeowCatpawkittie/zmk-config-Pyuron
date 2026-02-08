@@ -50,10 +50,10 @@
 
         MAC_OPS {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &kp CARET        &kp AMPERSAND  &kp TILDE         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH          &kp DOLLAR            &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL        &trans         &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp LEFT_BRACE
-&kp RIGHT_BRACE             &kp BACKSLASH    &trans           &trans           &trans        &trans           &trans         &trans            &trans                &kp PIPE
+&trans  &kp LG(LS(TAB))  &kp LC(UP_ARROW)    &kp LG(TAB)      &kp F11               &kp LC(LG(F))  &trans      &trans  &trans  &trans
+&trans  &kp LC(LEFT)     &kp LS(LG(T))       &kp LC(RIGHT)    &kp LG(LS(NUMBER_3))  &trans         &trans      &trans  &trans  &trans
+&trans  &kp KP_NUMBER_1  &kp LC(DOWN_ARROW)  &kp KP_NUMBER_3  &kp LG(LS(NUMBER_4))  &trans         &trans      &trans  &trans  &trans
+&trans  &trans           &trans              &trans           &trans                &trans         &kp DELETE  &trans  &trans  &kp LG(Q)
             >;
         };
 
@@ -68,19 +68,19 @@
 
         WIN_OPS {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans   &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans  &trans  &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans  &trans  &trans  &trans  &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans   &trans  &trans      &trans  &trans  &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans  &trans      &trans  &trans  &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans  &trans      &trans  &trans  &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans  &kp DELETE  &trans  &trans  &trans
             >;
         };
 
         NUM_SYS {
             bindings = <
-&trans  &trans     &trans  &trans  &trans  &kp FSLH  &kp N1  &kp N2  &kp N3   &kp MINUS
-&trans  &trans     &trans  &trans  &trans  &trans    &kp N4  &kp N5  &kp N6   &kp EQUAL
-&trans  &trans     &trans  &trans  &trans  &trans    &trans  &kp N0  &kp N7   &kp N8
-&kp N9  &kp RSHFT  &trans  &trans  &trans  &trans    &trans  &trans  &kp DOT  &trans
+&trans  &trans          &kp UP_ARROW    &trans           &trans  &kp FSLH  &kp N1  &kp N2  &kp N3   &kp MINUS
+&trans  &kp LEFT_ARROW  &trans          &kp RIGHT_ARROW  &trans  &trans    &kp N4  &kp N5  &kp N6   &kp EQUAL
+&trans  &trans          &kp DOWN_ARROW  &trans           &trans  &trans    &trans  &kp N0  &kp N7   &kp N8
+&kp N9  &kp RSHFT       &trans          &trans           &trans  &trans    &trans  &trans  &kp DOT  &trans
             >;
         };
 
