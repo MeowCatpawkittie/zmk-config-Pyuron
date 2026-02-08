@@ -68,10 +68,10 @@
 
         WIN_OPS {
             bindings = <
-&kp ESCAPE      &kp LS(LA(TAB))         &kp UP_ARROW    &kp LA(TAB)              &trans   &trans  &trans      &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans  &trans      &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans  &trans      &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans  &kp DELETE  &trans  &trans  &kp LA(F4)
+&trans  &kp LS(LA(TAB))  &kp UP_ARROW    &kp LA(TAB)      &kp LG(D)        &trans  &trans      &trans  &trans  &trans
+&trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(LS(S))    &trans  &trans      &trans  &trans  &trans
+&trans  &kp LC(HOME)     &trans          &kp LC(END)      &kp PRINTSCREEN  &trans  &trans      &trans  &trans  &trans
+&trans  &trans           &trans          &trans           &trans           &trans  &kp DELETE  &trans  &trans  &kp LA(F4)
             >;
         };
 
