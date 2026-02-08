@@ -51,7 +51,7 @@
         MAC_OPS {
             bindings = <
 &trans  &kp LG(LS(TAB))     &kp LC(UP_ARROW)    &kp LG(TAB)          &kp F11               &trans  &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LC(LG(F))  &kp LG(LC(Q))
-&trans  &kp LC(LEFT)        &kp LS(LG(T))       &kp LC(RIGHT)        &kp LG(LS(NUMBER_3))  &trans  &trans            &trans             &trans         &trans
+&trans  &kp LC(LEFT)        &kp LS(LG(T))       &kp LC(RIGHT)        &kp LG(LS(NUMBER_3))  &trans  &kp F2            &trans             &trans         &trans
 &trans  &kp LG(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &kp LG(LS(NUMBER_4))  &trans  &trans            &trans             &trans         &trans
 &trans  &trans              &trans              &trans               &trans                &trans  &kp DELETE        &trans             &trans         &kp LG(Q)
             >;
@@ -69,7 +69,7 @@
         WIN_OPS {
             bindings = <
 &trans  &kp LS(LA(TAB))         &kp LG(TAB)    &kp LA(TAB)              &kp LG(D)        &trans  &kp LA(LEFT)  &kp LA(RIGHT)  &kp PAUSE_BREAK  &kp LG(L)
-&trans  &kp LC(LG(LEFT_ARROW))  &kp LC(LS(T))  &kp LC(LG(RIGHT_ARROW))  &kp LG(LS(S))    &trans  &trans        &kp LG(D)      &kp INSERT       &trans
+&trans  &kp LC(LG(LEFT_ARROW))  &kp LC(LS(T))  &kp LC(LG(RIGHT_ARROW))  &kp LG(LS(S))    &trans  &kp F2        &kp LG(D)      &kp INSERT       &trans
 &trans  &kp LC(HOME)            &trans         &kp LC(END)              &kp PRINTSCREEN  &trans  &trans        &trans         &trans           &trans
 &trans  &trans                  &trans         &trans                   &trans           &trans  &kp DELETE    &trans         &trans           &kp LA(F4)
             >;
