@@ -14,18 +14,19 @@
     combos { compatible = "zmk,combos"; };
 
     macros {
-        bt_0: to_layer_0 {
+        bt_MAC: to_layer_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&macro_wait_time 200>, <&bt BT_SEL 0>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 200>, <&tog 0>;
 
             label = "TO_LAYER_0";
         };
 
-        bt_1: bt_1 {
+        bt_WIN: bt_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&bt BT_SEL 1>, <&macro_wait_time 200>, <&tog 2>;
+
             label = "BT_1";
         };
     };
@@ -33,7 +34,7 @@
     lt_to_layer_0: lt_to_layer_0 {
         compatible = "zmk,behavior-hold-tap";
         label = "LAYER_TAP_TO_0";
-        bindings = <&mo>, <&bt_0>;
+        bindings = <&mo>, <&bt_MAC>;
 
         #binding-cells = <2>;
         tapping-term-ms = <200>;
