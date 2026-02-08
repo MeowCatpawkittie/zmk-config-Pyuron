@@ -14,18 +14,26 @@
     combos { compatible = "zmk,combos"; };
 
     macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+        bt_0: to_layer_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0>, <&macro_wait_time 200>, <&bt BT_SEL 0>;
+
             label = "TO_LAYER_0";
+        };
+
+        bt_1: bt_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "BT_1";
         };
     };
 
     lt_to_layer_0: lt_to_layer_0 {
         compatible = "zmk,behavior-hold-tap";
         label = "LAYER_TAP_TO_0";
-        bindings = <&mo>, <&to_layer_0>;
+        bindings = <&mo>, <&bt_0>;
 
         #binding-cells = <2>;
         tapping-term-ms = <200>;
@@ -50,10 +58,10 @@
 
         MAC_OPS {
             bindings = <
-&trans  &kp LG(LS(TAB))     &kp LC(UP_ARROW)    &kp LG(TAB)          &kp F11               &trans  &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LC(LG(F))  &kp LG(LC(Q))
-&trans  &kp LC(LEFT)        &kp LS(LG(T))       &kp LC(RIGHT)        &kp LG(LS(NUMBER_3))  &trans  &kp F2            &trans             &trans         &trans
-&trans  &kp LG(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &kp LG(LS(NUMBER_4))  &trans  &trans            &trans             &trans         &trans
-&trans  &trans              &trans              &trans               &trans                &trans  &kp DELETE        &trans             &trans         &kp LG(Q)
+&trans   &kp LG(LS(TAB))     &kp LC(UP_ARROW)    &kp LG(TAB)          &kp F11               &trans  &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LC(LG(F))  &kp LG(LC(Q))
+&kp TAB  &kp LC(LEFT)        &kp LS(LG(T))       &kp LC(RIGHT)        &kp LG(LS(NUMBER_3))  &trans  &kp F2            &trans             &trans         &trans
+&trans   &kp LG(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &kp LG(LS(NUMBER_4))  &trans  &trans            &trans             &trans         &trans
+&trans   &trans              &trans              &trans               &trans                &trans  &kp DELETE        &trans             &trans         &kp LG(Q)
             >;
         };
 
@@ -68,10 +76,10 @@
 
         WIN_OPS {
             bindings = <
-&trans  &kp LS(LA(TAB))         &kp LG(TAB)    &kp LA(TAB)              &kp LG(D)        &trans  &kp LA(LEFT)  &kp LA(RIGHT)  &kp PAUSE_BREAK  &kp LG(L)
-&trans  &kp LC(LG(LEFT_ARROW))  &kp LC(LS(T))  &kp LC(LG(RIGHT_ARROW))  &kp LG(LS(S))    &trans  &kp F2        &kp LG(D)      &kp INSERT       &trans
-&trans  &kp LC(HOME)            &trans         &kp LC(END)              &kp PRINTSCREEN  &trans  &trans        &trans         &trans           &trans
-&trans  &trans                  &trans         &trans                   &trans           &trans  &kp DELETE    &trans         &trans           &kp LA(F4)
+&trans   &kp LS(LA(TAB))         &kp LG(TAB)    &kp LA(TAB)              &kp LG(D)        &trans  &kp LA(LEFT)  &kp LA(RIGHT)  &kp PAUSE_BREAK  &kp LG(L)
+&kp TAB  &kp LC(LG(LEFT_ARROW))  &kp LC(LS(T))  &kp LC(LG(RIGHT_ARROW))  &kp LG(LS(S))    &trans  &kp F2        &kp LG(D)      &kp INSERT       &trans
+&trans   &kp LC(HOME)            &trans         &kp LC(END)              &kp PRINTSCREEN  &trans  &trans        &trans         &trans           &trans
+&trans   &trans                  &trans         &trans                   &trans           &trans  &kp DELETE    &trans         &trans           &kp LA(F4)
             >;
         };
 
