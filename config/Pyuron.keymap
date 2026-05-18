@@ -32,15 +32,6 @@
     };
 };
 
-&trackball_listener_R {
-    input-processors = <
-        /* 270度回転させて軸を修正（キーボードの向きに合わせて 90 / 180 / 270 を調整） */
-        <&zip_xy_transform INPUT_TRANSFORM_270>,
-        
-        /* 先ほど入れたオートマウスの設定 */
-        <&zip_temp_layer 6 600>
-    >;
-};
 
 / {
     behaviors {
