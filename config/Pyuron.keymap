@@ -32,9 +32,6 @@
     };
 };
 
-&trackball_listener {
-    input-processors = <&zip_temp_layer 6 500>;
-};
 
 / {
     behaviors {
