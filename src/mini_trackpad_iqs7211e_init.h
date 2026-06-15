@@ -1,4 +1,4 @@
-/*
+/* 
 * This file contains all the necessary settings for the IQS7211E.
 * It can be changed from the GUI or edited here.
 * File:   IQS7211E_init.h
@@ -6,6 +6,11 @@
 */ 
 
 #pragma once
+
+#include <stdint.h>
+
+/* Declaration of initialization data array */
+extern const uint8_t mini_trackpad_iqs7211e_init[];
 
 /* ALP ATI Compensation */
 /* Memory Map Position 0x1F - 0x20 */
